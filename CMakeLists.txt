@@ -16,7 +16,7 @@ project (HELLOWORLD)
 
 # Custom CFLAGS
 # ---------------------------
-set (HELLOWORLD_CFLAGS "-std=c++11 -03")
+set (HELLOWORLD_CFLAGS "-std=c++11 -O3")
 set (HELLOWORLD_EXE_LINKER_FLAGS "")
 
 # Setup all flags

@@ -1,6 +1,7 @@
 #ifndef VECTORADD_HPP
 #define VECTORADD_HPP
 
+#include <assert.h>
 #include <iostream>
 #include <vector>
 
@@ -8,7 +9,7 @@
 using namespace std;
 
 
-namespace helloword
+namespace helloworld
 {
 
 template<typename T>
@@ -25,16 +26,16 @@ vector<T> VectorAdd( vector<T> &a, vector<T> &b )
 
   /** Version#2: iterator */
   for ( auto ita  = a.begin(), itb  = b.begin(), itc  = c.begin();
-             ita != a.end(),   itb != c.end(),   itc != c.end();
+                                                 itc != c.end();
              ita ++,           itb ++,           itc ++ )
   {
-    (*c) = (*a) + (*b);
+    (*itc) = (*ita) + (*itb);
   }
 
   /** Return c and exit */
   return c;
 };
 
-}; /** end namespace helloword */
+}; /** end namespace helloworld */
 
 #endif /** define VECTORADD_HPP */

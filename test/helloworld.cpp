@@ -19,10 +19,10 @@ int main()
   vector<T> b( n, 1 );
 
   /** Use VectorAdd<T> template */
-  vector<T> c= VectorAdd<T>( a, b ); 
+  vector<T> c= helloworld::VectorAdd<T>( a, b ); 
 
   /** Use VectorAdd_f64 */
-  vector<double> c_f64 = VectorAdd_f64( a, b );
+  vector<double> c_f64 = helloworld::VectorAdd_f64( a, b );
 
   cout << "Hello world! c[ 0 ] = " <<  c[ 0 ] << " C_f64[ 0 ] = " << c_f64[ 0 ] << endl;
 
