@@ -24,3 +24,9 @@
 # 3. Put headers and prototypes (.h or .hpp) in /include.
 # 4. Write additional test files (.cpp with main() function) in /test.
 # 5. Follow the 5 instructions above to compile.
+
+# Port the new project with git.
+
+>> rm -rf .git
+>> git init
+>> git commit -m "first commit of the new project"
