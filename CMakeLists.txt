@@ -12,30 +12,31 @@ set (CMAKE_DEBUG_POSTFIX "-debug")
 
 # Project specification.
 # ---------------------------
-project (HELLOWORLD)
+#project (PROJECT)
+project ($ENV{PROJECT_NAME})
 
 # Custom CFLAGS
 # ---------------------------
-set (HELLOWORLD_CFLAGS "-std=c++11 -O3")
-set (HELLOWORLD_EXE_LINKER_FLAGS "")
+set (PROJECT_CFLAGS "-std=c++11 -O3")
+set (PROJECT_EXE_LINKER_FLAGS "")
 
 # Setup all flags
 # ---------------------------
-set (CMAKE_C_FLAGS        "${CMAKE_C_FLAGS} ${HELLOWORLD_CFLAGS}")
-set (CMAKE_CXX_FLAGS    "${CMAKE_CXX_FLAGS} ${HELLOWORLD_CFLAGS}")
-set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${HELLOWORLD_EXE_LINKER_FLAGS}")
+set (CMAKE_C_FLAGS        "${CMAKE_C_FLAGS} ${PROJECT_CFLAGS}")
+set (CMAKE_CXX_FLAGS    "${CMAKE_CXX_FLAGS} ${PROJECT_CFLAGS}")
+set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${PROJECT_EXE_LINKER_FLAGS}")
 
 # Headers.
 # ---------------------------
 include_directories ("include" "frame")
-file (GLOB HELLOWORLD_HDRS ${CMAKE_SOURCE_DIR}/include/*)
-install (FILES ${HELLOWORLD_HDRS} DESTINATION ${CMAKE_BINARY_DIR}/include)
+file (GLOB PROJECT_HDRS ${CMAKE_SOURCE_DIR}/include/*)
+install (FILES ${PROJECT_HDRS} DESTINATION ${CMAKE_BINARY_DIR}/include)
 
 
 # Library dependencies
 # ---------------------------
 file (GLOB CXX_SRC ${CMAKE_SOURCE_DIR}/src/*.cpp)
-add_library (helloworld STATIC ${CXX_SRC})
+add_library ($ENV{PROJECT_NAME} STATIC ${CXX_SRC})
 
 # Build the executable files.
 # ---------------------------
@@ -44,5 +45,5 @@ foreach( testsrc ${TEST_CXX_SRC} )
   string( REPLACE ".cpp" ".x" testexe ${testsrc} )
   get_filename_component( testexe ${testsrc} NAME_WE )
   add_executable( "${testexe}.x" ${testsrc} )
-  target_link_libraries( "${testexe}.x" helloworld )
+  target_link_libraries( "${testexe}.x" $ENV{PROJECT_NAME} )
 endforeach()

@@ -1,6 +1,8 @@
 #!/bin/bash
-export HELLOWORLD_DIR=$PWD
-echo "HELLOWORLD_DIR = $HELLOWORLD_DIR"
+export PROJECT_NAME="HELLOWORLD"
+export PROJECT_DIR=$PWD
+echo "PROJECT_DIR = $PROJECT_DIR"
+echo "PROJECT_NAME = $PROJECT_NAME"
 
 ## Parallel options
 export OMP_PROC_BIND=spread
