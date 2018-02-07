@@ -17,8 +17,12 @@ project ($ENV{PROJECT_NAME})
 
 # Custom CFLAGS
 # ---------------------------
+find_program (ICC_PATH "icc")
+find_program (ICPC_PATH "icpc")
+set (CMAKE_C_COMPILER ${ICC_PATH})
+set (CMAKE_CXX_COMPILER ${ICPC_PATH})
 set (PROJECT_CFLAGS "-std=c++11 -O3")
-set (PROJECT_EXE_LINKER_FLAGS "")
+set (PROJECT_EXE_LINKER_FLAGS "-mkl=parallel")
 
 # Setup all flags
 # ---------------------------
