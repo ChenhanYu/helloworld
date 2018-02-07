@@ -1,3 +1,9 @@
+# This is a general project template that contains "set_env.sh" to set
+# environment variables, "/src" and "/frame" to separate source and
+# template files, "/include" to accomondate headers and prototypes.
+# There is a toy vector add implemented with STL and C++ templates.
+# There is also a toy Cmake file for beginner to get started.
+
 # To compile, follow the these instructions.
 
 >> source set_env.sh
